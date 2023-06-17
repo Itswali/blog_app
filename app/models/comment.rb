@@ -1,8 +1,9 @@
-class Comment < ActiveRecord::Base
+class Comment < ApplicationRecord
+  belongs_to :user
   belongs_to :post
-  belongs_to :author, class_name: 'User', foreign_key: 'user_id'
+  after_create :increment_post_comments_counter
 
-  def update_comments_counter
+  def increment_post_comments_counter
     post.increment!(:comments_counter)
   end
 end

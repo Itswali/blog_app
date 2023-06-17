@@ -1,6 +1,5 @@
 require 'rails_helper'
 
-
 RSpec.describe Comment, type: :model do
   let!(:author) { User.create(name: 'person', posts_counter: 0) }
   let!(:post) { Post.create(author_id: author.id, title: 'title', comments_counter: 1, likes_counter: 0) }

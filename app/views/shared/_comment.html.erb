@@ -1,6 +1,2 @@
-<% user = comment.user %>
-<% if user %>
-  <p><%= user.name %>: <%= comment.text %></p>
-<% else %>
-  <p>Unknown User: <%= comment.text %></p>
-<% end %>
+<% user = User.find(comment.user_id)  %>
+<p><%= user.name %>: <%= comment.text %></p>
