@@ -84,7 +84,7 @@ In order to run this project you need:
 
 Clone this repository to your desired folder:
 
-> git clone https://github.com/itswali/rails_blog_app
+> git clone https://github.com/itswali/blog_app
 
 ### Install
 
@@ -134,7 +134,7 @@ rspec
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/Itswali/rails_blog_app/issues/).
+Feel free to check the [issues page](https://github.com/Itswali/blog_app/issues/).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
