@@ -1,0 +1,39 @@
+<div class="post-detail">
+  <div class="post-head">
+    <h3>Post <%=@post.id %> by <%= @user.name %></h3>
+      <ul>
+        <li>Comments: <%= @post.comments_counter || 0 %> </li>
+        <li>Likes: <%= @post.likes_counter || 0 %> </li>
+      </ul>
+  </div>
+  <div class="post-body">
+    <p><%= @post.text %></p>
+  </div>
+</div>
+
+<div class="post-likes">
+<%= form_with model: @like, url: create_like_path, method: :post, local: true, scope: :like do |form| %>
+  <%= form.submit 'Like this post' %>
+  <%= form.hidden_field :post_id, value: @post.id %>
+<% end %>
+</div>
+
+<div class="post-comments">
+  <% @post.comments.each do |comment| %>
+    <%= render partial: 'shared/comment', locals: { comment: comment } %>
+  <% end %>
+</div>
+
+<div class="new-comments">
+<h2> Add comment </h2>
+<%= form_with model: @comment, url: create_comment_path, method: :post, local: true, scope: :comment do |form| %>
+  <div class="comment-form">
+    <%= form.label :text %>
+    <%= form.text_area :text %>
+    <%= form.hidden_field :post_id, value: @post.id %>
+  </div>
+  <div class="comment-form-btn">
+    <%= form.submit %>
+  </div>
+<% end %>
+</div>
