@@ -25,7 +25,7 @@ RSpec.describe 'User show page', type: :feature do
       likes_counter: 2
     )
 
-    @post2 = Post.create(
+    @post3 = Post.create(
       author_id: @user.id,
       title: 'Test3',
       text: 'Third Post',
