@@ -33,6 +33,5 @@ RSpec.describe UsersController, type: :request do
     #   get '/users/2'
     #   expect(response.body).to include('Here go the detail of specific user')
     # end
-
   end
 end
