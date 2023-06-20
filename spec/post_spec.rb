@@ -35,12 +35,14 @@ RSpec.describe Post, type: :model do
     expect(subject).to_not be_valid
   end
 
-  describe '#update_posts_counter' do
-    let!(:user) { User.create(name: 'John Doe', posts_counter: 0) }
-    subject { Post.create(title: 'Test post', author_id: user.id) }
+  describe Post, type: :model do
+    let!(:user) { User.create(name: 'person', posts_counter: 0) }
 
-    it 'increments the user posts_counter by 1' do
-      expect { subject.update_posts_counter }.to change { user.reload.posts_counter }.by(0)
+    context 'increment_user_posts_counter' do
+      it 'should increment the user posts_counter by 1' do
+        expect { Post.create(author_id: user.id, title: 'Test post') }
+          .to change { user.reload.posts_counter }.by(0)
+      end
     end
   end
 
