@@ -1,15 +1,7 @@
-# db/seeds.rb
-
-# Create 10 demo users
-10.times do |n|
-  user = User.create!(
-    name: "User #{n+1}",
-    email: "user#{n+1}@example.com",
-    password: "password",
-    password_confirmation: "password",
-    confirmed_at: Time.now, # Mark the user as confirmed
-    posts_counter: 0 # Set the posts counter to zero initially
-  )
-
-  puts "Created user: #{user.email}"
-end
+# This file should contain all the record creation needed to seed the database with its default values.
+# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
+#
+# Examples:
+#
+#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
+#   Character.create(name: "Luke", movie: movies.first)

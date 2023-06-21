@@ -1,14 +1,19 @@
-<h2> Add a new post</h2>
-<div class="new-post">
-<%= form_with model: @post,  url: new_post_path do |form| %>
-    <div>
-      <%= form.label :title %>
-      <%= form.text_field :title %>
-    </div>
-    <div>
-      <%= form.label :text %>
-      <%= form.text_area :text %>
-    </div>
-    <%= form.submit "Save" %>
-  <% end %>
-</div>
+<section class="container">
+<p class="post-title"> Add New Post :</p>
+<%= form_with model: @post, url: user_posts_path do |f| %>
+     <div>
+     <%= f.label :title %> <br>
+     <%= f.text_field :title %>
+     </div>
+
+     <div>
+     <%= f.label :text %> <br>
+     <%= f.text_field :text, placeholder: "Enter post text", row: 40, required: true %>
+     </div>
+     <br>
+     <div>
+     <%= f.submit "Submit Post" %>
+     </div>
+<% end %>
+
+</section>

@@ -1,12 +1,11 @@
 class PostsController < ApplicationController
   def index
     @user = User.find(params[:user_id])
-    @posts = @user.posts
+    @posts = @user.posts.includes(:comments)
   end
 
   def show
     @post = Post.find(params[:id])
-    @user = User.find(params[:user_id])
   end
 
   def new
@@ -14,20 +13,19 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(post_params)
-    @post.author_id = current_user.id
-    @post.comments_counter = 0
-    @post.likes_counter = 0
+    @post = current_user.posts.new(post_params)
     if @post.save
-      redirect_to users_path
+      flash[:success] = 'Post has benn created successfully'
+      redirect_to user_post_path(current_user, @post)
     else
+      flash.now[:error] = 'Error: Post was not created !!'
       render :new
     end
   end
 
-  private
-
   def post_params
-    params.required(:post).permit(:title, :text)
+    params.require(:post).permit(:title, :text)
   end
+
+  private :post_params
 end
