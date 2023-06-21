@@ -5,6 +5,8 @@ gem 'rspec-rails'
 
 gem 'rubocop', '>= 1.0', '< 2.0'
 
+gem 'faker'
+
 ruby '3.0.2'
 
 gem 'rails-controller-testing'
