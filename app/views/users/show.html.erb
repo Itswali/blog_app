@@ -1,7 +1,8 @@
 <%= render 'shared/user', user: @user %>
+<%= render 'shared/header'%>
     <div class="bio">
-        <p> Bio: <%= @user.bio%> </P>
-    </div>
+        <p> Bio: <%= @user.bio%> </P>      
+    </div>  
 
   <% @user.recent_posts.each do |post| %>
     <%= render 'shared/post', post: post %>
@@ -11,3 +12,4 @@
     <button class="see-posts-btn">See all posts</button>
   <% end %>
 </div>
+   

@@ -150,3 +150,35 @@ a {
   display: flex;
   justify-content: space-between;
 }
+
+.sign-up-container {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  padding: 30px;
+  align-items: center;
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  padding: 30px;
+  align-items: center;
+}
+
+.login-container form .actions {
+  display: flex;
+}
+
+.login-container form,
+.login-container input {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.sign-up-container form,
+.sign-up-container input {
+  width: 100%;
+  margin-bottom: 10px;
+}
