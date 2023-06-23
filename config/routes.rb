@@ -1,13 +1,15 @@
 Rails.application.routes.draw do
-  # Defines the root path route ("/")
-  root 'users#index'
+  devise_for :users
 
-  resources :users, only: [:index, :show] do
-    resources :posts, only: [:index, :show]
+  devise_scope :user do
+    root 'devise/sessions#new'
   end
 
-  resources :posts, only: [:new, :create]
-
-  post 'comments/new', to: 'comments#create', as: 'create_comment'
-  post 'likes/new', to: 'likes#create', as: 'create_like'
+  resources :users, only: [:index, :show] do 
+    resources :posts, only: [:index, :show, :new, :create] do
+      resources :comments, only: [:new, :create] 
+      resources :likes, only: [:create]
+    end
+  end
+  
 end

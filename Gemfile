@@ -5,6 +5,8 @@ gem 'rspec-rails'
 
 gem 'rubocop', '>= 1.0', '< 2.0'
 
+gem 'faker'
+
 ruby '3.0.2'
 
 gem 'rails-controller-testing'
@@ -76,3 +78,5 @@ group :test do
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
+
+gem 'devise', '~> 4.9'

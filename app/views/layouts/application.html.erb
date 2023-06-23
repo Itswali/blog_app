@@ -1,16 +1,29 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>BlogApp</title>
+    <title>BlogAppRails</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %> 
+    <%= stylesheet_link_tag 'blogAppRails.css' %>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
+  <body class="body"> 
+  <% flash.each do |key, message| %>
+      <div class="flash-message">
+        <%= message %>
+      </div>
+    <% end %>
+  <%= render 'shared_features/header' %> 
+  <div>
     <%= yield %>
+  </div> 
+  <%= render 'shared_features/footer' %> 
   </body>
 </html>
