@@ -117,6 +117,12 @@ rspec
 * Twitter: [@Wali-Muhammad](https://twitter.com/WaliMuh94818599)
 * LinkedIn: [@wali-Muhammad](https://linkedin.com/in/wali-muhammad-666040244/)
 
+👤 **Nicolas Olaya**
+
+- GitHub: [@NicolasAndrehh](https://github.com/NicolasAndrehh)
+- Twitter: [@nicolasolaya22](https://twitter.com/nicolasolaya22)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/nicolas-olaya/)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
