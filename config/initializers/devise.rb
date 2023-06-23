@@ -14,7 +14,10 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = '9199debd2790b23940f7bf6f6c808c1fdc5ae8802780f12b6573b9ed2881538af9727857a080d0bb95afb42c30dd24290877c4c44ce71f646c27a392e80141ac'
+  # config.secret_key = 'd239a89089e51e43126c1cf0f8562dc67673fb25dd5eed6d0f60789327d94806f3ea5eb8d494f4982a8147952894e69954e22ae6e40768e5659f56b890a39734'
+
+  # Added from the blog material
+  config.navigational_formats = ['*/*', :html, :turbo_stream]
 
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
@@ -24,7 +27,7 @@ Devise.setup do |config|
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-  config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
+  config.mailer_sender = 'emekaekeoha@yahoo.com'
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
@@ -126,7 +129,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 12
 
   # Set up a pepper to generate the hashed password.
-  # config.pepper = '8e74d794488bfb1c8e8d5cbe37293398d7477b570c156c1b2ea1753cae716e4f66e628d5cf26eb29cd7e43dbb55fc202e34645499ab9795142a28a13e32574f1'
+  # config.pepper = '7cb378461b26553f0432c1efbb2c30da0907a725082a2d23b03fc04eb6e69597c6177e956b1bda9bc96029579d2a151d815953e60c69aa160eb79b701a604605'
 
   # Send a notification to the original email when the user's email is changed.
   # config.send_email_changed_notification = false
@@ -143,7 +146,7 @@ Devise.setup do |config|
   # without confirming their account.
   # Default is 0.days, meaning the user cannot access the website without
   # confirming their account.
-  # config.allow_unconfirmed_access_for = 2.days
+  config.allow_unconfirmed_access_for = 2.days
 
   # A period that the user is allowed to confirm their account before their
   # token becomes invalid. For example, if set to 3.days, the user can confirm
